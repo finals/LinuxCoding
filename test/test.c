@@ -1,15 +1,23 @@
 #include <stdio.h>
 
-struct sdslen {
-    int len;
-    int free;
-    char buf[];
-};
+typedef struct policy {
+    int id;
+} policy_t;
 
-char buf[]; 
-
-int main()
+int main(int argc, char *argv[])
 {
-    printf("%d\n", sizeof(struct sdslen));
+    policy_t policy;
+    policy_t *p = &policy;
+    policy_t **pp;
+
+    p->id = 111;
+
+    printf("before stap set, p->id: %d\n", p->id);
+
+    pp = &p;
+
+    printf("after stap set, p->id: %d, (*pp)->id: %d\n", p->id, (*pp)->id);
+
     return 0;
 }
+
