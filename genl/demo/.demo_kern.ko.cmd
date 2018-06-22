@@ -1,0 +1,1 @@
+cmd_/home/code/practice/genl/demo/demo_kern.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/code/practice/genl/demo/demo_kern.ko /home/code/practice/genl/demo/demo_kern.o /home/code/practice/genl/demo/demo_kern.mod.o

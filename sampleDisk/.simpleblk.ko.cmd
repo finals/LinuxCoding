@@ -1,0 +1,1 @@
+cmd_/home/code/practice/sampleDisk/simpleblk.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/code/practice/sampleDisk/simpleblk.ko /home/code/practice/sampleDisk/simpleblk.o /home/code/practice/sampleDisk/simpleblk.mod.o

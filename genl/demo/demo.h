@@ -1,0 +1,24 @@
+#ifndef _DEMO_KERN_H_
+#define _DEMO_KERN_H_
+
+#define DEMO_GENL_NAME "DEMO_GEN_CTRL"
+#define DEMO_GENL_VERSION 0x1
+
+enum {
+    DEMO_CMD_UNSPEC = 0, /* Reserved */
+	DEMO_CMD_ECHO,
+	DEMO_CMD_REPLY,
+	__DEMO_CMD_MAX,
+};
+#define DEMO_CMD_MAX (__DEMO_CMD_MAX - 1)
+
+enum {
+    DEMO_CMD_ATTR_UNSPEC = 0,
+	DEMO_CMD_ATTR_MESG,
+	DEMO_CMD_ATTR_DATA,
+	__DEMO_CMD_ATTR_MAX,
+
+};
+#define DEMO_CMD_ATTR_MAX (__DEMO_CMD_ATTR_MAX - 1)
+
+#endif

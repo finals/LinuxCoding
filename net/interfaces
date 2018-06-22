@@ -1,0 +1,12 @@
+auto ens28
+iface ens28 inet static
+address 192.168.9.5
+netmask 255.255.255.0
+gateway 192.168.9.1
+
+
+auto ens28
+iface ens28 inet static
+address 192.168.10.5
+netmask 255.255.255.0
+gateway 192.168.10.1

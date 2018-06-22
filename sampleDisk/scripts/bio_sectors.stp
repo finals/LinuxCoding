@@ -1,0 +1,23 @@
+#!/usr/bin/stap
+
+global sz;
+
+probe begin
+{
+    printf("Tracing block I/O ... Hit Ctrl-C to end.\n");
+}
+
+probe kernel.trace("block_rq_insert")
+{
+    sz[execname()] <<< $rq->__data_len >> 9;
+}
+
+probe end
+{
+    printf("\nI/O size (sectors):\n\n");
+    foreach (name in sz) {
+        printf("process name: %s\n", name);
+        print(@hist_log(sz[name]));
+    }
+    delete sz;
+}
